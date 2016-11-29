@@ -1,29 +1,92 @@
 {
-  "name": "react-native-youtube",
-  "version": "0.8.0",
+  "_args": [
+    [
+      {
+        "raw": "react-native-youtube@github:johnteee/react-native-youtube",
+        "scope": null,
+        "escapedName": "react-native-youtube",
+        "name": "react-native-youtube",
+        "rawSpec": "github:johnteee/react-native-youtube",
+        "spec": "github:johnteee/react-native-youtube",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:johnteee/react-native-youtube.git",
+          "sshUrl": "git+ssh://git@github.com/johnteee/react-native-youtube.git",
+          "httpsUrl": "git+https://github.com/johnteee/react-native-youtube.git",
+          "gitUrl": "git://github.com/johnteee/react-native-youtube.git",
+          "shortcut": "github:johnteee/react-native-youtube",
+          "directUrl": "https://raw.githubusercontent.com/johnteee/react-native-youtube/master/package.json"
+        }
+      },
+      "/Users/teee/dev/hauhau-headline"
+    ]
+  ],
+  "_from": "johnteee/react-native-youtube",
+  "_id": "react-native-youtube@0.8.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/react-native-youtube",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "react-native-youtube@github:johnteee/react-native-youtube",
+    "scope": null,
+    "escapedName": "react-native-youtube",
+    "name": "react-native-youtube",
+    "rawSpec": "github:johnteee/react-native-youtube",
+    "spec": "github:johnteee/react-native-youtube",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:johnteee/react-native-youtube.git",
+      "sshUrl": "git+ssh://git@github.com/johnteee/react-native-youtube.git",
+      "httpsUrl": "git+https://github.com/johnteee/react-native-youtube.git",
+      "gitUrl": "git://github.com/johnteee/react-native-youtube.git",
+      "shortcut": "github:johnteee/react-native-youtube",
+      "directUrl": "https://raw.githubusercontent.com/johnteee/react-native-youtube/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git://github.com/johnteee/react-native-youtube.git#2c5e2f86e422b66e14549400bbf89173ff904ef2",
+  "_shasum": "342e47230f5bb1ab16c73033e88c90b2699206b0",
+  "_shrinkwrap": null,
+  "_spec": "react-native-youtube@github:johnteee/react-native-youtube",
+  "_where": "/Users/teee/dev/hauhau-headline",
+  "author": {
+    "name": "Param Aggarwal"
+  },
+  "bugs": {
+    "url": "https://github.com/paramaggarwal/react-native-youtube/issues"
+  },
+  "dependencies": {},
   "description": "A <YouTube/> component for React Native.",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/paramaggarwal/react-native-youtube.git"
-  },
+  "devDependencies": {},
+  "gitHead": "2c5e2f86e422b66e14549400bbf89173ff904ef2",
+  "homepage": "https://github.com/paramaggarwal/react-native-youtube#readme",
   "keywords": [
     "youtube",
     "react",
     "react-native"
   ],
-  "author": "Param Aggarwal",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/paramaggarwal/react-native-youtube/issues"
+  "main": "main.js",
+  "name": "react-native-youtube",
+  "optionalDependencies": {},
+  "readme": "# react-native-youtube [![react-native-youtube](http://img.shields.io/npm/dm/react-native-youtube.svg)](https://www.npmjs.org/package/react-native-youtube) [![npm version](https://badge.fury.io/js/react-native-youtube.svg)](http://badge.fury.io/js/react-native-youtube) [![Dependency Status](https://david-dm.org/inProgress-team/react-native-youtube.svg)](https://david-dm.org/inProgress-team/react-native-youtube)\nA `<YouTube/>` component for React Native.\n\nUses Google's official [youtube-ios-player-helper](https://github.com/youtube/youtube-ios-player-helper) and exposes much of the API into React Native.\n\n## Screenshot\n\n![Screenshot of the example app](https://github.com/paramaggarwal/react-native-youtube/raw/master/Screenshot.png)\n\n## Usage\n\n```javascript\n<YouTube\n  ref=\"youtubePlayer\"\n  videoId=\"KVZ-P-ZI6W4\" // The YouTube video ID\n  play={true}           // control playback of video with true/false\n  hidden={false}        // control visiblity of the entire view\n  playsInline={true}    // control whether the video should play inline\n  loop={false}          // control whether the video should loop when ended\n\n  onReady={(e)=>{this.setState({isReady: true})}}\n  onChangeState={(e)=>{this.setState({status: e.state})}}\n  onChangeQuality={(e)=>{this.setState({quality: e.quality})}}\n  onError={(e)=>{this.setState({error: e.error})}}\n  onProgress={(e)=>{this.setState({currentTime: e.currentTime, duration: e.duration})}}\n\n  style={{alignSelf: 'stretch', height: 300, backgroundColor: 'black', marginVertical: 10}}\n/>\n```\n```javascript\nthis.refs.youtubePlayer.seekTo(20);\n```\n\n## Properties\n\n* `videoID`: The YouTube video ID to play, can be changed to change the video playing.\n* `play`: Controls playback of video with `true`/`false`. Setting it as `true` in the beginning itself makes the video autoplay on loading.\n* `hidden`: Controls the `view.hidden` native property. For example, use this to hide player while it loads.\n* `playsInline`: Controls whether the video should play inline, or in full screen.\n* `rel`: Hides related videos at the end of the video. Default `false`.\n* `loop`: Loops the video. Default `false`.\n* `modestbranding`: This parameter lets you use a YouTube player that does not show a YouTube logo. Default `false`.\n* `controls`: This parameter indicates whether the video player controls are displayed. Supported values are `0`, `1`, `2`. Default `1`. [More information](https://developers.google.com/youtube/player_parameters?hl=en#controls)\n* `showinfo`: Setting the parameter's value to false causes the player to not display information like the video title and uploader before the video starts playing. Default `true`.\n* `origin`: This parameter provides an extra security measure for the IFrame API.\n* `apiKey`: This parameter is required on Android for the YouTube API to work.\n\n## Events\n\n* `onReady`: This function is called when the video player is setup.\n* `onChangeState`: Sends the current state of the player on `e.state`. Common values are `buffering`/`playing`/`paused` and more.\n* `onChangeQuality`: Sends the current quality of video playback on `e.quality`.\n* `onError`: Sends any errors during video playback on `e.error`.\n* `onProgress`: Sends any time progress made on `e.currentTime` and `e.duration`.\n\n## Methods\n\n* `seekTo(seconds)`: Seeks to a specified time in the video\n\n### Installation\n\n##### IOS\n(requires react-native >= 0.6.0)\n\n`$ rnpm install react-native-youtube`\n\n`$ add YTPlayerView-iframe-player.html from Assets to your xcode project`\n\n##### Android : rnpm is not working yet !!\n\nIn node_module :\n\n`$ git clone https://github.com/inProgress-team/react-native-youtube.git`\n\nThen add in settings.gradle :\n ```\ninclude ':RCTYouTube', ':app'\nproject(':RCTYouTube').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-youtube/RCTYouTube')\n ```\nIn build.gradle :\n\n ```\n dependencies {\n    [...]\n    compile project(':RCTYouTube')     // From node_modules\n   \n} \n```\n\nIn MainApplication.java :\n\n```\nimport com.inprogress.reactnativeyoutube.ReactNativeYouTube;\n\n[...]\n\n @Override\n    protected List<ReactPackage> getPackages() {\n      return Arrays.<ReactPackage>asList(\n          new MainReactPackage(),\n              new ReactNativeYouTube()\n      );\n    }\n ```\n\n##### OPTIONAL : Activated sound when phone is on vibrate mode\n\nOpen AppDelegate.m and add :\n\n* `#import <AVFoundation/AVFoundation.h>`\n\n* `[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error: nil];` in your didFinishLaunchingWithOptions method\n\n## Example\nTry the included `RCTYouTubeExample`:\n\n```sh\ngit clone git@github.com:paramaggarwal/react-native-youtube.git\ncd react-native-youtube/Example\nnpm install\nopen RCTYouTubeExample.xcodeproj\n```\nThen `Cmd+R` to start the React Packager, build and run the project in the simulator.\n\n## Author\n* Param Aggarwal (paramaggarwal@gmail.com)\n* Ownership has been transfered to inProgress-team\n\n## License\nMIT License\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paramaggarwal/react-native-youtube.git"
   },
-  "homepage": "https://github.com/paramaggarwal/react-native-youtube#readme",
   "rnpm": {
     "android": {
       "packageInstance": "new ReactNativeYouTube()"
     }
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.8.0"
 }
