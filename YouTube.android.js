@@ -11,7 +11,9 @@ import ReactNative, {
   StyleSheet,
   requireNativeComponent,
   NativeModules,
-  NativeMethodsMixin
+  NativeMethodsMixin,
+  WebView,
+  Platform,
 } from 'react-native';
 
 const RCTYouTube = requireNativeComponent('ReactYouTube', YouTube,
@@ -135,13 +137,18 @@ export default class YouTube extends Component {
        */
       delete nativeProps.playsInline;
     }
+    if(Platform.OS === 'ios'){
+      return <RCTYouTube {... nativeProps} />
+    }
+    else{
+      return <WebView style={this.props.style}  source={{html: `<iframe width='320' height='300' src="https://www.youtube.com/embed/${this.props.videoId}" frameborder="0" allowfullscreen></iframe>`}} />
+    }
 
-    return <RCTYouTube {... nativeProps} />;
   }
 }
 
 const styles = StyleSheet.create({
   base: {
     overflow: 'hidden',
-  },
+  }
 });
